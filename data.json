@@ -30,6 +30,36 @@
             "study",
             "study room",
             "study hard"
+        ],
+        "a": [
+            "apple",
+            "async",
+            "amazon",
+            "animal",
+            "afreeca"
+        ],
+        "ap": [
+            "apple",
+            "apartment",
+            "apart",
+            "apologize"
+        ],
+        "app": [
+            "app",
+            "app store",
+            "apple",
+            "apply",
+            "appointment"
+        ],
+        "appl": [
+            "apply",
+            "apple",
+            "application"
+        ],
+        "apple": [
+            "apple",
+            "apple store",
+            "apple music"
         ]
     }
 }
