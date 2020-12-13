@@ -8,7 +8,6 @@ function paintList(words) {
     const completeWord = document.createElement("li");
     completeBox.appendChild(completeWord);
     completeWord.innerHTML = words[i];
-    completeWord.addEventListener("click", valueChange);
   }
 }
 
@@ -16,19 +15,19 @@ function paintList(words) {
 function valueChange(e) {
   const userChoice = e.target.innerHTML;
   searchBox.value = userChoice;
-  loadData(searchBox.value);
+  completeBox.innerHTML = "";
 }
+
+completeBox.addEventListener("click", valueChange);
 
 //data fetch
 async function loadData() {
-  let searchWord = searchBox.value;
-  try {
-    await fetch(`http://localhost:3000/autocomplete?keyword=${searchWord}`)
-      .then((response) => response.json())
-      .then((data) => paintList(data));
-  } catch (error) {
-    console.log(error);
-  }
+  const searchWord = searchBox.value;
+  const response = await fetch(
+    `http://localhost:3000/autocomplete?keyword=${searchWord}`
+  );
+  const data = await response.json();
+  paintList(data);
 }
 
 searchBox.addEventListener("keyup", loadData);
